@@ -1,38 +1,10 @@
-import sys
-# encoding=utf8
-reload(sys)
-sys.setdefaultencoding('utf8')
-import pyforce
-#from tika import parser
 import spacy
-import urllib2, json
 import re
 import os
-import pyodbc
 import json
-from pymongo import MongoClient
 import pandas as pd
-#from simplescraper import SimpleScraper
-client = MongoClient('mongodb://localhost:27017')
-import requests
-import justext
-db = client['api_resume']
 
-#nlp = spacy.load("en_core_web_sm")
-
-#n = spacy.load('../LinkedResumeParser2_3')
-
-#n = spacy.load("../../LinkedResumeParser2_1")
-#stop = stopwords.words('english')
-
-salesforce = pyforce.PythonClient();
-salesforce.login('jrosario@greenkeyllc.com', 'Barnacleboy1zZEuzupYdmXEB4YVnCzb4PIBY')
-#salesforce.login('jrosario@greenkeyllc.com', 'Barnacleboy1zZEuzupYdmXEB4YVnCzb4PIBY') ----> PROD
-
-#conn = pyodbc.connect('DRIVER={/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.4.so.1.1};SERVER=salesforcedata.c8otlxqbhm3v.us-west-1.rds.amazonaws.com;DATABASE=datagkr;UID=admin;PWD=GreenGiant136')
-#cursor = conn.cursor()
-
-#print(sys.argv[1])
+nlp = spacy.load("en_core_web_sm")
 
 def init(contactId,webUrl, link):
     if webUrl:
@@ -303,6 +275,8 @@ weburl = salesforce.query("select Id,TR1__Type__c,TR1__Contact__c,TR1__HTML_URL_
 for key in weburl:
     init(key['TR1__Contact__c'], key['TR1__HTML_URL__c'], key['TR1__HTML_URL__c'])
     print (key['TR1__HTML_URL__c'])
+if __name__ == '__main__':
+    pass
 
 #init(weburl[0]['TR1__Contact__c'],weburl[0]['TR1__HTML_URL__c'], weburl[0]['TR1__HTML_URL__c'])
 
