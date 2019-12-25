@@ -21,10 +21,13 @@ cache:
 before_script:
   - python -V  # Print out python version for debugging
   - pip install virtualenv
+  - pip install spacy
+  - pip install pandas
   - virtualenv venv
   - source venv/bin/activate
 
 test:
   script:
+    - python parser.py test
     - echo "thi"
 
