@@ -193,7 +193,8 @@ def extract_skills(document):
         skills +=str(dfd['skills'][ind])+';'
     return str(skills)
 def extract_experience(document):
-    doc = n(document)
+    pass
+    """doc = n(document)
     exp = {
         'companies':[],
         'title':[],
@@ -216,7 +217,7 @@ def extract_experience(document):
                 print "s"
             exp['exp_year'].append(x.text)
 
-    return exp
+    return exp"""
 def month_string_to_number(string):
     m = {
         'jan': 1,
