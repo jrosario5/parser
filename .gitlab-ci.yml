@@ -31,3 +31,8 @@ test:
     - python parser.py test
     - echo "thi"
 
+stages:
+  - build
+  - test
+  - deploy
+
