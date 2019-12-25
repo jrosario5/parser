@@ -14,13 +14,13 @@ def init(contactId,webUrl, link):
         #clean = re.compile('\{([^}]+)\}')
         #s= re.sub(clean, '', resumeText)
         #s = re.sub(r'\{([^}]+)\}', '', s)
-        paragraphs = justext.justext(response.content, justext.get_stoplist("English"))
+        """paragraphs = justext.justext(response.content, justext.get_stoplist("English"))
         p=''
         for paragraph in paragraphs:
             print paragraph.text
             p+=paragraph.text
         print p
-        print storage(contactId,str(p), link)
+        print storage(contactId,str(p), link)"""
 
 def remove_html_tags(text):
     """Remove html tags from a string"""
