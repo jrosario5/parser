@@ -4,8 +4,6 @@ import os
 import json
 import pandas as pd
 
-nlp = spacy.load("gp")
-
 def extract_clean_resume(text):
     splitByline     = text.split('\n')
     i=0
@@ -75,6 +73,7 @@ def extract_url(document):
     return u
 
 if __name__ == '__main__':
+    nlp = spacy.load("gp")
     pass
 
 #init(weburl[0]['TR1__Contact__c'],weburl[0]['TR1__HTML_URL__c'], weburl[0]['TR1__HTML_URL__c'])
