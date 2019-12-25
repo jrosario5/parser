@@ -23,11 +23,11 @@ before_script:
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
+  - pip install spacy
+  - pip install pandas
 
 test:
   script:
-    - pip install spacy
-    - pip install pandas
     - python parser.py test
     - echo "thi"
 
