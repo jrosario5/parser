@@ -28,6 +28,6 @@ before_script:
 
 test:
   script:
-    - python parser.py test
+    - python3 parser.py test
     - echo "thi"
 
