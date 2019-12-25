@@ -74,10 +74,6 @@ def extract_url(document):
             break;
     return u
 
-weburl = salesforce.query("select Id,TR1__Type__c,TR1__Contact__c,TR1__HTML_URL__c from TR1__ContactDocument__c where TR1__Type__c='Resume' limit 500 ")
-for key in weburl:
-    init(key['TR1__Contact__c'], key['TR1__HTML_URL__c'], key['TR1__HTML_URL__c'])
-    print (key['TR1__HTML_URL__c'])
 if __name__ == '__main__':
     pass
 
