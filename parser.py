@@ -78,4 +78,4 @@ if __name__ == '__main__':
     from tika import parser
     parsed = parser.from_file('resume.pdf')
     #print(parsed["metadata"])
-    print(parsed["content"])
+    print(str(parsed["content"].encode('utf-8')))
