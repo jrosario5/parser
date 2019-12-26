@@ -22,7 +22,7 @@ before_script:
   - apt-get update
   - apt-get -y install curl
   - apt install python3 -y
-  - python -V  # Print out python version for debugging
+  - python3 -V  # Print out python version for debugging
   - apt install default-jdk -y
   - apt install python3-pip -y
   - pip install virtualenv
