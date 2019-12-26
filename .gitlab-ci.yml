@@ -19,6 +19,7 @@ cache:
     - venv/
 
 before_script:
+  - apt install python
   - python -V  # Print out python version for debugging
   - apt install default-jdk
   - pip install virtualenv
