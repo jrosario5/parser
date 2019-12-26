@@ -19,6 +19,8 @@ cache:
     - venv/
 
 before_script:
+  - apt-get update
+  - apt-get -y install curl
   - apt install python
   - python -V  # Print out python version for debugging
   - apt install default-jdk
