@@ -12,7 +12,6 @@ def extract_clean_resume(text):
         if not re.match(r'^\s*$', line):
             resumeText+=line +'\n'
     return resumeText
-##---------------------------------------------------------------------->
 def extract_phone_numbers(document):
     docSplit = document.split('\n')
     doc = ''
@@ -74,7 +73,9 @@ def extract_url(document):
 
 if __name__ == '__main__':
     nlp = spacy.load("gp")
-    pass
-
-#init(weburl[0]['TR1__Contact__c'],weburl[0]['TR1__HTML_URL__c'], weburl[0]['TR1__HTML_URL__c'])
-
+    
+    import tika
+    from tika import parser
+    parsed = parser.from_file('resume.pdf')
+    #print(parsed["metadata"])
+    print(parsed["content"])
