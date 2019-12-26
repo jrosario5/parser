@@ -24,6 +24,7 @@ before_script:
   - apt install python -y
   - python -V  # Print out python version for debugging
   - apt install default-jdk -y
+  - apt install python-pip -y
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
