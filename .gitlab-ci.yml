@@ -21,18 +21,18 @@ cache:
 before_script:
   - apt-get update
   - apt-get -y install curl
-  - apt install python -y
+  - apt install python3 -y
   - python -V  # Print out python version for debugging
   - apt install default-jdk -y
-  - apt install python-pip -y
+  - apt install python3-pip -y
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
-  - pip install spacy
-  - pip install pandas
-  - pip install tika
+  - pip3 install spacy
+  - pip3 install pandas
+  - pip3 install tika
 
 test:
   script:
-    - python parser.py test
+    - python3 parser.py test
     - echo "thi"
