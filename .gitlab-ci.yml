@@ -21,9 +21,9 @@ cache:
 before_script:
   - apt-get update
   - apt-get -y install curl
-  - apt install python
+  - apt install python -y
   - python -V  # Print out python version for debugging
-  - apt install default-jdk
+  - apt install default-jdk -y
   - pip install virtualenv
   - virtualenv venv
   - source venv/bin/activate
