@@ -82,6 +82,6 @@ if __name__ == '__main__':
     text = parsed['content']
     doc = nlp(text)
     for ents in doc.ents:
-        print(ents.text+" ~ "+ents.label_)
+        print(str(ents.text.encode('utf-8')))
     #print (extract_name(nlp,text))
-    print(extract_clean_resume(text))
+    #print(extract_clean_resume(text))
