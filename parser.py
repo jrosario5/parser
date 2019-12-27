@@ -29,13 +29,13 @@ def extract_email_addresses(string):
     r = re.compile(r'[\w\.-]+@[\w\.-]+')
     return r.findall(string)
 
-def extract_name(document):
+def extract_name(n, document):
     docs = n(document)
     for entity in docs.ents:
         if(entity.label_=='NAME'):
             name = entity.text
-            #break;
-        return name
+            break;
+            return name
 def extract_skills(document):
     doc = n(document)
     skills = ''
@@ -76,6 +76,12 @@ if __name__ == '__main__':
     
     import tika
     from tika import parser
-    parsed = parser.from_file('resume.pdf')
-    #print(parsed["metadata"])
-    print(str(parsed["content"].encode('utf-8')))
+    parsed = parser.from_file('Srinivasan.pdf')
+    ### converting changes the format
+    #text = str(parsed["content"].encode('utf-8')) ### converting changes the format
+    text = parsed['content']
+    doc = nlp(text)
+    for ents in doc.ents:
+        print(ents.text+" ~ "+ents.label_)
+    #print (extract_name(nlp,text))
+    print(extract_clean_resume(text))
