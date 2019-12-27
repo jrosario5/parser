@@ -39,14 +39,14 @@ before_script:
 
 stages:
   - test
-  - build
-  - deploy
+  #- build
+  #- deploy
 
 test:
   script:
     - python3 parser.py test
     - echo "thi"
 
-build:
-  stage: build
-  script: echo "Building the app"
+#build:
+#  stage: build
+#  script: echo "Building the app"
