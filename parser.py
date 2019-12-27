@@ -35,7 +35,7 @@ def extract_name(n, document):
         if(entity.label_=='NAME'):
             name = entity.text
             break;
-            return name
+    return name
 def extract_skills(document):
     doc = n(document)
     skills = ''
