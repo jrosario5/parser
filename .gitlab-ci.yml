@@ -37,7 +37,16 @@ before_script:
   - pip3 install pandas
   - pip3 install tika
 
+stages:
+  - test
+  - build
+  - deploy
+
 test:
   script:
     - python3 parser.py test
     - echo "thi"
+
+build:
+  stage: build
+  script: echo "Building the app"
