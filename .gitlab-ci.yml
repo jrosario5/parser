@@ -8,6 +8,20 @@ image: ubuntu:latest
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
+before_script:
+  - apt-get -o dir::cache::archives="apt-cache" update
+  - apt-get -o dir::cache::archives="apt-cache" install curl -y
+  - apt-get -o dir::cache::archives="apt-cache" install python3 -y
+  - python3 -V  # Print out python version for debugging
+  - apt-get -o dir::cache::archives="apt-cache" install default-jdk -y
+  - apt-get -o dir::cache::archives="apt-cache" install python3-pip -y
+  - pip3 install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+  - pip3 install spacy
+  - pip3 install pandas
+  - pip3 install tika
+  
 # Pip's cache doesn't store the python packages
 # https://pip.pypa.io/en/stable/reference/pip_install/#caching
 #
@@ -16,21 +30,8 @@ variables:
 cache:
   paths:
     - .cache/pip
+    - apt-cache/
     - venv/
-
-before_script:
-  - apt-get update
-  - apt-get -y install curl
-  - apt install python3 -y
-  - python3 -V  # Print out python version for debugging
-  - apt install default-jdk -y
-  - apt install python3-pip -y
-  - pip3 install virtualenv
-  - virtualenv venv
-  - source venv/bin/activate
-  - pip3 install spacy
-  - pip3 install pandas
-  - pip3 install tika
 
 test:
   script:
