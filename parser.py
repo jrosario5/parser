@@ -94,5 +94,5 @@ if __name__ == '__main__':
     text = extract_clean_resume(parsed['content'])
     doc = nlp(text)
     # print(doc)
-    for ents in doc.ents:
-        print(str(ents.text) + " ~ " + str(ents.label_))
+    """for ents in doc.ents:
+        print(str(ents.text) + " ~ " + str(ents.label_))"""
