@@ -88,11 +88,12 @@ if __name__ == '__main__':
 
     import tika
     from tika import parser
-    parsed = parser.from_file('resumeT1.pdf')
+    parsed = parser.from_file('resumeT3.pdf')
     # converting changes the format
     # text = str(parsed["content"].encode('utf-8')) ### converting changes the format
     text = extract_clean_resume(parsed['content'])
     doc = nlp(text)
-    # print(doc)
-    """for ents in doc.ents:
-        print(str(ents.text) + " ~ " + str(ents.label_))"""
+    print(doc)
+    print(' ')
+    for ents in doc.ents:
+        print(str(ents.text) + " ~ " + str(ents.label_))
