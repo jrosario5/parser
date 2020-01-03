@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
     import tika
     from tika import parser
-    parsed = parser.from_file('resumeT3.pdf')
+    parsed = parser.from_file('resumeT4.pdf')
     # converting changes the format
     # text = str(parsed["content"].encode('utf-8')) ### converting changes the format
     text = extract_clean_resume(parsed['content'])
